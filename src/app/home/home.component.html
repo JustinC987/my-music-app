@@ -1,0 +1,35 @@
+<div class="container">
+
+<form class="search-form" [formGroup]="searchForm" (ngSubmit)="searchMusic()">
+  <div class="flex-outer">
+    <div class="flex-inner">
+      <mat-form-field>
+        <mat-label>Search by Track, Album, or Artist</mat-label>
+        <mat-select formControlName="searchType">
+          <mat-option *ngFor="let musicType of musicTypes" [value]="musicType.viewValue">
+            {{musicType.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Search Music</mat-label>
+          <input matInput formControlName="searchContent" required>
+          <button matSuffix class="search-btn">
+            <mat-icon matSuffix>search</mat-icon>
+          </button>
+          <mat-error class="error-list" *ngIf="validateField('search')">
+            <mat-error *ngIf="check('search', 'required')">
+              Stock symbol required
+            </mat-error>
+            <mat-error *ngIf="check('search', 'pattern')">
+              Invalid stock symbol
+            </mat-error>
+          </mat-error> 
+          </mat-form-field>
+
+      </div>
+    </div>
+  </form>
+</div>
+
