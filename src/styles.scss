@@ -3,13 +3,60 @@
 
 // button
 
-.container {
-	width: 90%;
+/**
+	* Font Awesome
+	*/
+@import 'https://use.fontawesome.com/releases/v5.3.1/css/all.css';
+
+/**
+* Base style
+*/
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #fafafa;
+}
+
+html,
+body,
+.input-form,
+textarea {
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	color: #242424;
 }
 
 body {
 	background-color: #fafafa;
 }
+
+/**
+* Containers
+*/
+
+.container {
+	width: 90%;
+	margin: auto;
+}
+
+.flex-outer {
+	display: flex;
+	flex-flow: wrap;
+}
+
+.flex-inner,
+.flex-outer > div {
+	flex: 1;
+}
+
+/**
+* Buttons
+*/
+
 button {
 	padding: 0;
 	margin: 0;
