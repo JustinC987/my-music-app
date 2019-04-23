@@ -19,7 +19,8 @@ import {
 	MatSortModule,
 	MatCheckboxModule,
 	MatSelectModule,
-	MatOptionModule
+	MatOptionModule,
+	MatMenuModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -52,7 +53,8 @@ import { HeaderComponent } from './header/header.component';
 		MatSortModule,
 		MatCheckboxModule,
 		MatSelectModule,
-		MatOptionModule
+		MatOptionModule,
+		MatMenuModule
 	],
 	providers: [],
 	bootstrap: [ AppComponent ]
