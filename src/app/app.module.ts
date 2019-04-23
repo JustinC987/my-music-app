@@ -19,16 +19,18 @@ import {
 	MatSortModule,
 	MatCheckboxModule,
 	MatSelectModule,
-	MatOptionModule
+	MatOptionModule,
+	MatMenuModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-	declarations: [ AppComponent, HomeComponent ],
+	declarations: [ AppComponent, HomeComponent, HeaderComponent ],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
@@ -51,7 +53,8 @@ import { HomeComponent } from './home/home.component';
 		MatSortModule,
 		MatCheckboxModule,
 		MatSelectModule,
-		MatOptionModule
+		MatOptionModule,
+		MatMenuModule
 	],
 	providers: [],
 	bootstrap: [ AppComponent ]
