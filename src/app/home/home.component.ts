@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterStateSnapshot } from '@angular/router';
 import { MusicService } from '../music.service';
+import { SongSearch } from '../models/song-search';
+import { ArtistSearch } from '../models/artist-search';
+import { AlbumSearch } from '../models/album-search';
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
@@ -10,6 +13,9 @@ import { MusicService } from '../music.service';
 export class HomeComponent implements OnInit {
 	public searchForm: FormGroup;
 	public hasSubmit: boolean;
+	public songSearch?: SongSearch[] = [];
+	public artistSearch: ArtistSearch[];
+	public albumSearch?: AlbumSearch[] = [];
 	public musicTypes = [
 		{ value: 'type1', viewValue: 'track' },
 		{ value: 'type2', viewValue: 'artist' },
@@ -31,13 +37,22 @@ export class HomeComponent implements OnInit {
 
 	getMusic() {
 		this.musicService.getMusic({}).subscribe((result) => {
-			console.log('get request: ', result);
+			if (this.searchForm.controls['searchType'].value === 'track') {
+				this.songSearch = result;
+				console.log('Song Search ', this.songSearch);
+			} else if (this.searchForm.controls['searchType'].value === 'album') {
+				this.albumSearch = result;
+				console.log('Album Search ', this.albumSearch);
+			} else if (this.searchForm.controls['searchType'].value === 'artist') {
+				this.artistSearch = result;
+				console.log('Artist Search ', this.artistSearch);
+			}
 		});
 	}
 	searchMusic() {
 		const formData = this.searchForm.getRawValue();
+
 		this.musicService.post(formData).subscribe((result) => {
-			console.log('result: ', result);
 			this.getMusic();
 		});
 	}

@@ -30,9 +30,9 @@ export class MusicService {
 		);
 	}
 
-	public getMusic(params: any): Observable<SongSearch[]> {
+	public getMusic(params: any): Observable<any> {
 		return this.http
-			.get<SongSearch[]>(this.url, {
+			.get<any>(this.url, {
 				headers: this.authService.getHeaders()
 			})
 			.pipe(
@@ -48,7 +48,7 @@ export class MusicService {
 
 					return results;
 				}),
-				catchError(this.handler.error<SongSearch[]>('UserService::getOne'))
+				catchError(this.handler.error<any>('UserService::getOne'))
 			);
 	}
 }
