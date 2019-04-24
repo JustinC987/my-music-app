@@ -1,6 +1,7 @@
 export interface SongSearch {
+	id: string;
 	artist: String;
 	song: String;
-	preview: String;
+	preview: any;
 	album: String;
 }

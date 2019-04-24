@@ -1,4 +1,10 @@
 header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	width: 100%;
 	color: #fafafa;
 	background-color: #212121;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .5);

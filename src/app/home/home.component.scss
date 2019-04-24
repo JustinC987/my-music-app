@@ -11,6 +11,51 @@ i {
 }
 
 .container {
+	width: 90%;
+	margin-top: 2em;
 	padding: 5%;
 	min-height: 90vh;
+}
+
+// Mat-Table
+
+h1 {
+	text-align: center;
+}
+
+mat-form-field {
+	display: block;
+	width: 100%;
+	padding: 0;
+}
+
+table {
+	width: 100%;
+	background-color: #ffffff;
+}
+
+mat-paginator {
+	min-width: 683px;
+}
+
+.table-container {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.mat-row:hover {
+	cursor: pointer;
+	background-color: #e1f5fe;
+}
+
+.mat-pag-hidden {
+	visibility: hidden;
+}
+
+//i-frame
+
+iframe {
+	width: 100%;
+	margin-bottom: -0.25em;
+	height: 53%;
 }
