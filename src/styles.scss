@@ -75,11 +75,14 @@ table {
 .mat-cell {
 	color: #424242;
 }
+
 .mat-sort-header-container {
 	color: #000000;
 }
 
 .mat-row:hover {
+	background-color: #e3f2fd;
+
 	cursor: pointer;
 }
 
