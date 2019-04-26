@@ -1,13 +1,6 @@
-footer {
-	color: #fafafa;
-
-	border-top: solid 1px #aaa1a1;
-}
-
 .footer-style {
-	background-color: #bdbdbd;
-
 	position: relative;
+	background-color: #bdbdbd;
 }
 
 .brand {
@@ -27,11 +20,11 @@ footer {
 }
 
 .footer-links:hover {
-	color: #ffffff;
+	color: #212121;
 }
 
 .brand:hover {
-	color: #ffffff;
+	color: #212121;
 	text-decoration: none;
 }
 
@@ -53,5 +46,5 @@ footer {
 }
 
 .upArrowBtn:hover {
-	color: #b71c1c;
+	color: #01579b;
 }

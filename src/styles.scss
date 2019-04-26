@@ -67,6 +67,13 @@ mat-icon {
 * Mat table colors
 */
 
+table {
+	display: block;
+	margin: auto;
+	width: 100%;
+	background-color: #9e9e9e;
+}
+
 .mat-cell {
 	color: #e0e0e0;
 }
@@ -89,3 +96,10 @@ mat-icon {
 /*
 * Mat-input
 */
+
+mat-form-field {
+	display: block;
+	margin: auto;
+
+	width: 50%;
+}
