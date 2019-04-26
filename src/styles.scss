@@ -19,7 +19,7 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #fafafa;
+	background-color: #e0e0e0;
 }
 
 html,
@@ -28,10 +28,6 @@ body,
 textarea {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	color: #242424;
-}
-
-body {
-	background-color: #fafafa;
 }
 
 /**
@@ -61,6 +57,35 @@ button {
 	padding: 0;
 	margin: 0;
 	border-style: none;
-	color: #9e9e9e;
-	background-color: #fafafa;
 }
+
+mat-icon {
+	background-color: #e0e0e0;
+}
+
+/*
+* Mat table colors
+*/
+
+.mat-cell {
+	color: #e0e0e0;
+}
+.mat-sort-header-container {
+	color: #e0e0e0;
+}
+
+.mat-row:hover {
+	cursor: pointer;
+}
+
+.mat-checkbox-layout {
+	margin-right: 1em;
+}
+
+.mat-sort-header-arrow {
+	color: #1976d2;
+}
+
+/*
+* Mat-input
+*/
