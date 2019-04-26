@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
 				this.songSearch = result;
 				this.isSong = true;
 				this.dataSource = new MatTableDataSource(result);
-				this.dataSource.paginator = this.paginator;
+				// this.dataSource.paginator = this.paginator;
 				this.dataSource.sort = this.sort;
 				this.isLoading = false;
 			} else if (this.searchForm.controls['searchType'].value === 'album') {
