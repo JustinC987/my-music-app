@@ -1,9 +1,12 @@
 footer {
 	color: #fafafa;
+
 	border-top: solid 1px #aaa1a1;
 }
 
 .footer-style {
+	background-color: #bdbdbd;
+
 	position: relative;
 }
 
@@ -11,7 +14,7 @@ footer {
 	padding: 1rem 0;
 	font-size: 1.73rem;
 	text-decoration: none;
-	color: #757575;
+	color: #fafafa;
 }
 
 .footer-links {
@@ -20,15 +23,15 @@ footer {
 	font-size: 1rem;
 	cursor: pointer;
 	text-decoration: none;
-	color: #757575;
+	color: #fafafa;
 }
 
 .footer-links:hover {
-	color: #bdbdbd;
+	color: #ffffff;
 }
 
 .brand:hover {
-	color: #81d4fa;
+	color: #ffffff;
 	text-decoration: none;
 }
 
@@ -41,7 +44,7 @@ footer {
 
 	padding: 1.6rem;
 	text-align: center;
-	color: #757575;
+	color: #ffffff;
 
 	border: none;
 
@@ -50,5 +53,5 @@ footer {
 }
 
 .upArrowBtn:hover {
-	color: #81d4fa;
+	color: #b71c1c;
 }

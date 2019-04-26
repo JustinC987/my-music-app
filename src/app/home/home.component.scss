@@ -25,13 +25,8 @@ h1 {
 
 mat-form-field {
 	display: block;
-	width: 100%;
+	width: 50%;
 	padding: 0;
-}
-
-table {
-	width: 100%;
-	background-color: #ffffff;
 }
 
 mat-paginator {
@@ -41,11 +36,6 @@ mat-paginator {
 .table-container {
 	margin-top: 2em;
 	margin-bottom: 2em;
-}
-
-.mat-row:hover {
-	cursor: pointer;
-	background-color: #e1f5fe;
 }
 
 .mat-pag-hidden {
@@ -58,4 +48,17 @@ iframe {
 	width: 100%;
 	margin-bottom: -0.25em;
 	height: 53%;
+}
+
+table {
+	width: 100%;
+	color: #ffffff;
+
+	background-color: #9e9e9e;
+}
+
+mat-paginator {
+	color: #ffffff;
+
+	background-color: #9e9e9e;
 }
