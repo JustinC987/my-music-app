@@ -30,9 +30,19 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 @NgModule({
-	declarations: [ AppComponent, HomeComponent, HeaderComponent, FooterComponent, SignInComponent ],
+	declarations: [
+		AppComponent,
+		HomeComponent,
+		HeaderComponent,
+		FooterComponent,
+		SignInComponent,
+		SignUpComponent,
+		PasswordResetComponent
+	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
