@@ -37,7 +37,7 @@
     </div>
   </form>
 
-  <div class="table-container">
+  <div *ngIf="isSong" class="table-container">
     <div *ngIf="isSong" class="container-search">
       <mat-form-field appearance="outline">
         <mat-label>Search Songs</mat-label>
@@ -102,13 +102,84 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
       </div>
-      <!--
       <mat-paginator 
       class="mat-elevation-z8"
       [ngClass]="{'mat-pag-hidden': !isSong}"
       [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
     </mat-paginator>
-      -->
+
+  </div>
+
+  <div *ngIf="isAlbum" class="table-container">
+    <div *ngIf="isAlbum" class="container-search">
+      <mat-form-field appearance="outline">
+        <mat-label>Search Albums</mat-label>
+        <input matInput (keyup)="applyFilter($event.target.value)">
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="isAlbum" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+            <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox color='primary'
+                      (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox color='primary'
+                      (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+            <!-- Artist Column -->
+            <ng-container matColumnDef="artist">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Artist</th>
+              <td mat-cell *matCellDef="let album">{{album.artist}}</td>
+            </ng-container>
+          
+            <!-- Song Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Album</th>
+              <td mat-cell *matCellDef="let album">{{album.name}}</td>
+            </ng-container>
+          
+            <!-- Album Column -->
+            <ng-container matColumnDef="genres">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Genre(s)</th>
+              <td mat-cell *matCellDef="let album">{{album.genres}}</td>
+            </ng-container>
+          
+            <!-- Preview Column -->
+           <!-- Album Column -->
+           <ng-container matColumnDef="releaseDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Release Date</th>
+            <td mat-cell *matCellDef="let album"> {{album.releaseate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Artwork</th>
+            <td mat-cell *matCellDef="let album"><img [src]=album.image.url></td>
+          </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+      </div>
+    <mat-paginator 
+      class="mat-elevation-z8"
+      [ngClass]="{'mat-pag-hidden': !isSong}"
+      [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+    </mat-paginator>
 
   </div>
 </div>

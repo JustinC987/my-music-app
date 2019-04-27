@@ -21,7 +21,11 @@ export class HomeComponent implements OnInit {
 	public artistSearch: ArtistSearch[];
 	public albumSearch?: AlbumSearch[] = [];
 	public dataSource;
+	public dataSourceAlbum;
+	public dataSourceArtist;
 	public isSong = false;
+	public isAlbum = false;
+	public isArtist = false;
 	public isLoading = true;
 
 	public musicTypes = [
@@ -29,8 +33,8 @@ export class HomeComponent implements OnInit {
 		{ value: 'type2', viewValue: 'artist' },
 		{ value: 'type3', viewValue: 'album' }
 	];
-	displayedColumns: string[] = [ 'select', 'artist', 'song', 'album', 'preview' ];
-	selection = new SelectionModel<SongSearch>(true, []);
+	public displayedColumns: string[] = [];
+	selection = new SelectionModel<any>(true, []);
 
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort) sort: MatSort;
@@ -56,17 +60,27 @@ export class HomeComponent implements OnInit {
 				});
 
 				this.songSearch = result;
+				this.dataSource = new MatTableDataSource(this.songSearch);
 				this.isSong = true;
-				this.dataSource = new MatTableDataSource(result);
-				// this.dataSource.paginator = this.paginator;
+				this.isAlbum = false;
+				this.isArtist = false;
+				this.displayedColumns = [ 'select', 'artist', 'song', 'album', 'preview' ];
+				this.dataSource.paginator = this.paginator;
 				this.dataSource.sort = this.sort;
 				this.isLoading = false;
 			} else if (this.searchForm.controls['searchType'].value === 'album') {
 				this.albumSearch = result;
+				this.dataSource = new MatTableDataSource(this.albumSearch);
+				this.isAlbum = true;
 				this.isSong = false;
-				console.log('Album Search ', this.albumSearch);
+				this.isArtist = false;
+				this.displayedColumns = [ 'select', 'artist', 'name', 'genres', 'releaseDate', 'image' ];
+				this.dataSource.paginator = this.paginator;
+				this.dataSource.sort = this.sort;
 			} else if (this.searchForm.controls['searchType'].value === 'artist') {
 				this.artistSearch = result;
+				this.isArtist = true;
+				this.isAlbum = false;
 				this.isSong = false;
 				console.log('Artist Search ', this.artistSearch);
 			}
